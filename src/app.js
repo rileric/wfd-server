@@ -9,6 +9,7 @@ const errorHandler = require('./error-handler');
 const recipesRouter = require('../src/recipes/recipes-router');
 const { oneTimeFetches, fetchMealDBRecipeById, fetchMealDBRecipesTenRandom, fetchMealDBByIngredientList, fetchMealDBByCategory, fetchMealDBByCuisine } = require('../src/mealDB/mealDB-fetches');
 const cookbooksRouter = require('./cookbooks/cookbooks-router');
+const { makeOneTimeObject } = require('./temp-store');
 
 const app = express();
 const myDebug = console.log;
@@ -28,7 +29,9 @@ app.use('/cookbooks', cookbooksRouter);
 
 app.get('/meal-db-one-time', async (req,res) => {
   let oneTimeResponse = await oneTimeFetches(); // returns both category and cuisine lists
-  res.json(oneTimeResponse);
+  let testing = makeOneTimeObject();
+  //res.json(oneTimeResponse);
+  res.json(testing);
 });
 
 app.get('/meal-db-recipe/:recipe_id', async (req,res) => {

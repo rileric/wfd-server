@@ -28,7 +28,7 @@ const convertMealDBIngredients = (mealDBRecipe) => {
 
 const convertMealDBtoWFD = (mealDBRecipe) => {
     const newWFDRecipe = {
-        recipe_id: '',
+        recipe_id: null,
         recipe_owner: '1', // default user
         recipe_name: mealDBRecipe.strMeal, // name and mealdb_id are basic info
         mealdb_id: mealDBRecipe.idMeal,
