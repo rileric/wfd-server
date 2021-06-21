@@ -1,8 +1,6 @@
 const { MEALDB_KEY } = require('../config');
 const fetch = require('node-fetch');
 
-const myDebug = console.log;
-
 const fetchParams = {
     "method": "GET",
     "headers": {
@@ -57,7 +55,6 @@ async function fetchMealCategories() {
     return fetch(searchUrl, fetchParams)
     .then(response => {return response.json()} )
     .then(responseJson => {
-        // myDebug(`responseJson for MealCategories: `, responseJson);
         return responseJson;
     })
     .catch(err => {
@@ -75,7 +72,6 @@ async function fetchMealCuisines() {
     return fetch(searchUrl, fetchParams)
     .then(response => response.json() )
     .then(responseJson => {
-        // myDebug(`responseJson for MealCuisines: `, responseJson);
         return responseJson;
     })
     .catch(err => {
@@ -94,10 +90,11 @@ function fetchMealDBByIngredientList( ingredientList) {
     return fetch(searchUrl, fetchParams)
     .then(response => response.json() )
     .then(responseJson => {
-        // myDebug('fetchMealDBByIngredientList response = ', responseJson);
+      if(responseJson.meals != null) {
         let convertedRecipes = responseJson.meals.map(mealDBRecipe => convertMealDBtoWFD(mealDBRecipe));
-        // myDebug(convertedRecipes);
         return convertedRecipes;
+      }
+      return {message: "No recipes found."}; // No Recipes found
     })
     .catch(err => {
       console.log("There was an error with the request: " + err);
@@ -113,9 +110,7 @@ function fetchMealDBByIngredientList( ingredientList) {
     return fetch(searchUrl, fetchParams)
     .then(response => response.json() )
     .then(responseJson => {
-        // myDebug('fetchMealDBByCategory response = ', responseJson);
         let convertedRecipes = responseJson.meals.map(mealDBRecipe => convertMealDBtoWFD(mealDBRecipe));
-        // myDebug(convertedRecipes);
         return convertedRecipes;
     })
     .catch(err => {
@@ -132,9 +127,7 @@ function fetchMealDBByIngredientList( ingredientList) {
     return fetch(searchUrl, fetchParams)
     .then(response => response.json() )
     .then(responseJson => {
-        // myDebug('fetchMealDBByCuisine response = ', responseJson);
         let convertedRecipes = responseJson.meals.map(mealDBRecipe => convertMealDBtoWFD(mealDBRecipe));
-        // myDebug(convertedRecipes);
         return convertedRecipes;
     })
     .catch(err => {
@@ -157,9 +150,7 @@ async function fetchMealDBRecipeById(recipeId) {
     return fetch(searchUrl, fetchParams)
     .then(response => response.json() )
     .then(responseJson => {
-        // myDebug('fetchMealDBRecipesTenRandom response = ', responseJson.meals);
       let convertedRecipes = responseJson.meals.map(mealDBRecipe => convertMealDBtoWFD(mealDBRecipe));
-      // myDebug(convertedRecipes);
       return convertedRecipes;
     })
     .catch(err => {
@@ -173,9 +164,7 @@ async function fetchMealDBRecipesTenRandom() {
     return fetch(searchUrl, fetchParams)
     .then(response => response.json() )
     .then(responseJson => {
-      // myDebug('fetchMealDBRecipesTenRandom response = ', responseJson.meals);
       let convertedRecipes = responseJson.meals.map(mealDBRecipe => convertMealDBtoWFD(mealDBRecipe));
-      // myDebug(convertedRecipes);
       return convertedRecipes;
     })
     .catch(err => {

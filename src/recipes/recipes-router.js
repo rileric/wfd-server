@@ -60,7 +60,6 @@ recipesRouter
         .catch(next);
     });
 
-    // get user recipes
     recipesRouter
     .route('/private/:user_id')
     .get((req,res,next) => {
@@ -71,10 +70,6 @@ recipesRouter
             })
             .catch(next);
     });
-    // get recipes by category
-    // get recipes by cuisine
-    // get 10 random recipes --- Handled in app.js, uses MealDB api
-    // get recipes based off ingredients
 
 recipesRouter
     .route('/:recipe_id')

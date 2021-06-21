@@ -89,12 +89,6 @@ describe(`What's for Dinner endpoints`, () => {
       })
     })
   })
-  // GET user recipes
-
-  // get recipes by category ==== EXTERNAL API ====
-  // get recipes by cuisine ==== EXTERNAL API ====
-  // get 10 random recipes ==== EXTERNAL API ====
-  // get recipes based off ingredients ==== EXTERNAL API ====
 
   describe('GET /recipes/:recipe_id', () => {
     context('Given no recipes', () => {
@@ -124,7 +118,6 @@ describe(`What's for Dinner endpoints`, () => {
     })    
   })
 
-  // delete recipe
   describe('DELETE /recipes/:recipe_id', () => {
     context('Given no recipes', () => {
       it('responds with 404', () => {
@@ -136,7 +129,7 @@ describe(`What's for Dinner endpoints`, () => {
     })
 
     context('Given there are recipes', () => {
-      const testRecipes = fixtures.makeWFDRecipesArray(); // only has one recipe in array
+      const testRecipes = fixtures.makeWFDRecipesArray();
 
       beforeEach('insert recipes', () => {
         return db

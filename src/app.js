@@ -11,7 +11,6 @@ const { oneTimeFetches, fetchMealDBRecipeById, fetchMealDBRecipesTenRandom, fetc
 const cookbooksRouter = require('./cookbooks/cookbooks-router');
 
 const app = express();
-const myDebug = console.log;
 
 const morganOption = (NODE_ENV === 'production')
   ? 'tiny'
