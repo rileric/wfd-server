@@ -10,9 +10,11 @@ All recipes created without logging in will be available to everyone. After logg
 Demo User: wfddemo5@gmail.com / WFD&dem0
 
 Select a category or cuisine to see their recipes:
+
 ![A list of American recipes](https://github.com/rileric/rileric.github.io/blob/main/wfd/WFD-mealList.png)
 
 Enjoy delicious recipes:
+
 ![Banana Pancakes](https://github.com/rileric/rileric.github.io/blob/main/wfd/WFD-recipe.png)
 
 ### Technology
