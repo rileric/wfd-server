@@ -1,26 +1,25 @@
-# Express Boilerplate!
+# What's For Dinner (server)
+## The app for indecisive hunger!
+https://wfd-client.vercel.app/
 
-This is a boilerplate project used for starting new projects!
+### About
+This app helps users find a recipe by letting them select from a category, cuisine, random, or by list of ingredients. Most of the application uses the MealDB API to find recipes for dinner. Users can also add their own recipes. To delete a recipe, please use the contact form.
 
-## Set up
+All recipes created without logging in will be available to everyone. After logging in, users can view a list of recipes available (both public and private) or log out from their profile page.
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+Demo User: wfddemo5@gmail.com / WFD&dem0
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+Select a category or cuisine to see their recipes:
 
-## Scripts
+![A list of American recipes](https://github.com/rileric/rileric.github.io/blob/main/wfd/WFD-mealList.png)
 
-Start the application `npm start`
+Enjoy delicious recipes:
 
-Start nodemon for the application `npm run dev`
+![Banana Pancakes](https://github.com/rileric/rileric.github.io/blob/main/wfd/WFD-recipe.png)
 
-Run the tests `npm test`
+### Technology
+This app was originally created for the Thinkful's API capstone. It uses React, CSS, Express, Node, and PostgreSQL. The login system is from Auth0.
 
-## Deploying
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's main branch.
+
+
